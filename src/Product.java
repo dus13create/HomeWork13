@@ -24,8 +24,7 @@ public class Product {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Product product = (Product) obj;
-        return id == product.id &&
-                Objects.equals(category, product.category);
+        return id == product.id && Objects.equals(category, product.category);
     }
 
     @Override
