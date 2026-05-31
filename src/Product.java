@@ -33,4 +33,3 @@ public class Product {
         return Objects.hash(id, category);
     }
 }
-
