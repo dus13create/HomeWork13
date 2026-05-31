@@ -1,4 +1,5 @@
 import java.util.Objects;
+import java.util.Arrays;
 
 public class Product {
     private int id;
