@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.Objects;
-
+// Вот класс Order
 public class Order {
     private String customer;
     private Product[] basket;

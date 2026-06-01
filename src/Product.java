@@ -1,6 +1,6 @@
 import java.util.Objects;
 import java.util.Arrays;
-
+// Вот класс Product
 public class Product {
     private int id;
     private String name;
