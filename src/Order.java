@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Objects;
+
 // Вот класс Order
 public class Order {
     private String customer;
@@ -23,15 +24,20 @@ public class Order {
         if (!Objects.equals(customer, order.customer)) return false;
 
         // Сравнение массивов basket
-        if (basket == null && order.basket != null) return false;
-        if (basket != null && order.basket == null) return false;
+        if (basket == null || order.basket == null) {
+            return basket == order.basket; // оба null или один из них
+        }
 
         if (basket.length != order.basket.length) return false;
 
         for (int i = 0; i < basket.length; i++) {
-            if (basket[i] == null) {
-                if (order.basket[i] != null) return false;
-            } else if (!basket[i].equals(order.basket[i])) {
+            if (basket[i] == null && order.basket[i] == null) {
+                continue; // оба элемента равны null, пропускаем итерацию
+            }
+            if (basket[i] == null || order.basket[i] == null) {
+                return false; // один элемент null, другой нет
+            }
+            if (!basket[i].equals(order.basket[i])) {
                 return false;
             }
         }
