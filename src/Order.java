@@ -21,7 +21,22 @@ public class Order {
         if (obj == null || getClass() != obj.getClass()) return false;
         Order order = (Order) obj;
         if (!Objects.equals(customer, order.customer)) return false;
-        return Arrays.equals(basket, order.basket);
+
+        // Сравнение массивов basket
+        if (basket == null && order.basket != null) return false;
+        if (basket != null && order.basket == null) return false;
+
+        if (basket.length != order.basket.length) return false;
+
+        for (int i = 0; i < basket.length; i++) {
+            if (basket[i] == null) {
+                if (order.basket[i] != null) return false;
+            } else if (!basket[i].equals(order.basket[i])) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     @Override
