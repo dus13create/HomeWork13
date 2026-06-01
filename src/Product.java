@@ -1,6 +1,6 @@
 import java.util.Objects;
 import java.util.Arrays;
-
+// Вот класс Product
 public class Product {
     private int id;
     private String name;
@@ -24,8 +24,7 @@ public class Product {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Product product = (Product) obj;
-        return id == product.id &&
-                Objects.equals(category, product.category);
+        return id == product.id && Objects.equals(category, product.category);
     }
 
     @Override
@@ -33,4 +32,3 @@ public class Product {
         return Objects.hash(id, category);
     }
 }
-

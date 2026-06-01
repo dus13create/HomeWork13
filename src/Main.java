@@ -1,7 +1,7 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-
+// Вот класс Main
     public static void main(String[] args) {
         Product product1 = new Product(1, "Товар A", 100, "Категория 1");
         Product product2 = new Product(2, "Товар B", 200, "Категория 2");
